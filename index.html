@@ -1,0 +1,42 @@
+<!doctype html>
+<html class="no-js" lang="">
+<head>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+  
+<div class="header"></div>
+
+<img src="home-jr2.jpg"  id="img"/>
+
+<div class="footer"></div>
+	
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<script src="jquery.waitforimages.js"></script>
+<script>
+
+$('body').waitForImages(function(){
+
+  setImage();
+
+});
+
+function setImage(){
+  var img = $('#img');
+  var ww = $(window).width();
+  var wh = $(window).height();
+  var iw = $('#img').width();
+  var ih = $('#img').height();
+  console.log( ww, wh, iw, ih);
+  
+  if (iw < ww) {
+    img.width(ww);
+  }
+  
+}
+$(window).on('resize', function(){
+  setImage();
+});
+</script>
+</body>
+</html>
